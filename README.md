@@ -11,6 +11,13 @@ MCP server for Microsoft Graph API - a complete AI assistant toolkit for Outlook
 - **Multi-Account**: Support for multiple Microsoft accounts (personal, work, school)
 - **Unified Search**: Search across emails, files, events, and people
 
+## Quick start with `npx`
+```bash
+# Add Microsoft MCP server (replace with your Azure app ID)
+npx mcp add microsoft-graph-mcp -e MICROSOFT_MCP_CLIENT_ID=your-app-id-here -- uvx --from git+https://github.com/xylex-group/microsoft-graph-mcp.git microsoft-graph-mcp
+
+```
+
 ## Quick Start with Claude Desktop
 
 ```bash
