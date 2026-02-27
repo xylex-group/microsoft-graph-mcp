@@ -29,6 +29,7 @@ def _write_cache(content: str) -> None:
 
 def get_app() -> msal.PublicClientApplication:
     client_id = os.getenv("MICROSOFT_MCP_CLIENT_ID")
+    print( "client_id : ", client_id, " MICROSOFT_MCP_TENANT_ID : ", os.getenv("MICROSOFT_MCP_TENANT_ID"))
     if not client_id:
         raise ValueError("MICROSOFT_MCP_CLIENT_ID environment variable is required")
 

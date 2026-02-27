@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from dotenv import load_dotenv
-from microsoft_mcp import auth
+from microsoft_graph_mcp import auth
 
 # Load environment variables before anything else
 load_dotenv()
