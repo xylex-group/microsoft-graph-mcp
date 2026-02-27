@@ -1,0 +1,23 @@
+[project]
+name = "microsoft-graph-mcp"
+version = "0.2.0"
+description = "MCP server for the Microsoft Graph API with multi-account support"
+readme = "README.md"
+authors = [{ name = "floris", email = "floris@xylex.group" }]
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=2.8.0",
+    "httpx>=0.28.1",
+    "msal>=1.32.3",
+    "python-dotenv>=1.1.0",
+]
+
+[project.scripts]
+microsoft-graph-mcp = "microsoft_graph_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["mcp>=1.9.3", "pytest>=8.4.0", "pytest-asyncio>=1.0.0"]
