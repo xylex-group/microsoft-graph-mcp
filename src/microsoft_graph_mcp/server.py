@@ -1,6 +1,6 @@
 import os
 import sys
-from .tools import mcp
+from microsoft_graph_mcp.tools import mcp
 
 
 def main() -> None:

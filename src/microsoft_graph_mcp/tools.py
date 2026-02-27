@@ -3,7 +3,7 @@ import datetime as dt
 import pathlib as pl
 from typing import Any
 from fastmcp import FastMCP
-from . import graph, auth
+from microsoft_graph_mcp import graph, auth
 
 mcp = FastMCP("microsoft-graph-mcp")
 

@@ -1,7 +1,7 @@
 import httpx
 import time
 from typing import Any, Iterator
-from .auth import get_token
+from microsoft_graph_mcp.auth import get_token
 
 BASE_URL = "https://graph.microsoft.com/v1.0"
 # 15 x 320 KiB = 4,915,200 bytes
