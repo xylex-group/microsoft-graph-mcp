@@ -179,6 +179,10 @@ Or for local development:
 }
 ```
 
+### MCP Tools JSON
+
+For clients that expect the FastMCP **tools** configuration (e.g., Cursor, Claude Desktop, or VS Code), you can reuse `mcp-tools.json` from the repository root. Copy the `tools` object into your client configuration (or rename the file to `mcp.json` in the appropriate location), and update the absolute path and `MICROSOFT_MCP_CLIENT_ID` placeholder to match your machine.
+
 ## Multi-Account Support
 
 All tools require an `account_id` parameter as the first argument:

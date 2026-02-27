@@ -1,0 +1,16 @@
+{
+  "tools": {
+    "command": "uv",
+    "args": [
+      "run",
+      "--with",
+      "fastmcp",
+      "fastmcp",
+      "run",
+      "C:\\\\Users\\\\floris\\\\Documents\\\\GitHub\\\\microsoft-graph-mcp\\\\src\\\\microsoft_mcp\\\\tools.py:mcp"
+    ],
+    "env": {
+      "MICROSOFT_MCP_CLIENT_ID": "your-app-id-here"
+    }
+  }
+}
