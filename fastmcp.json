@@ -1,7 +1,7 @@
 {
   "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
   "source": {
-    "path": "src/microsoft_mcp/tools.py",
+    "path": "src/microsoft_graph_mcp/tools.py",
     "entrypoint": "mcp"
   },
   "environment": {
