@@ -15,6 +15,11 @@ dependencies = [
 [project.scripts]
 microsoft-graph-mcp = "microsoft_graph_mcp.server:main"
 
+[tool.hatch.build]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/microsoft_mcp"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
