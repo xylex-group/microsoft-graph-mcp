@@ -135,9 +135,13 @@ def list_emails(
     folder: str = "inbox",
     limit: int = 10,
     include_body: bool = True,
+    include_details: bool | None = None,
 ) -> list[dict[str, Any]]:
     """List emails from specified folder"""
     folder_path = FOLDERS.get(folder.casefold(), folder)
+    # Support include_details as alias for include_body (used by some MCP clients)
+    if include_details is not None:
+        include_body = include_details
 
     if include_body:
         select_fields = "id,subject,from,toRecipients,ccRecipients,receivedDateTime,hasAttachments,body,conversationId,isRead"
