@@ -221,6 +221,29 @@ uvx ruff format .
 uvx ruff check --fix --unsafe-fixes .
 ```
 
+## Docker
+
+Build the container and run the FastMCP server with your Azure app ID:
+
+```bash
+docker build -t microsoft-graph-mcp .
+docker run --rm -it \
+  -e MICROSOFT_MCP_CLIENT_ID=your-app-id-here \
+  -v ~/.microsoft_mcp_token_cache.json:/root/.microsoft_mcp_token_cache.json \
+  microsoft-graph-mcp
+```
+
+The image copies the repository into `/app/src` and sets `PYTHONPATH` so `fastmcp run fastmcp.json --skip-env` can import `microsoft_graph_mcp`. Mounting `~/.microsoft_mcp_token_cache.json` keeps authentication state between runs.
+
+Need to re-run the interactive authentication script? Override the default command:
+
+```bash
+docker run --rm -it \
+  -e MICROSOFT_MCP_CLIENT_ID=your-app-id-here \
+  -v ~/.microsoft_mcp_token_cache.json:/root/.microsoft_mcp_token_cache.json \
+  microsoft-graph-mcp python authenticate.py
+```
+
 ## Example: AI Assistant Scenarios
 
 ### Smart Email Management
