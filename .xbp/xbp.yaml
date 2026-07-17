@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/xylex-group/xbp/main/schemas/xbp.project.schema.json
+project_name: microsoft-graph-mcp
+version: 0.1.0
+port: 80
+build_dir: ./
+app_type: expressjs
+build_command: docker build -t xbp-microsoft-graph-mcp:latest .
+start_command: docker run -d --rm --name xbp-microsoft-graph-mcp -p 80:80 -e PORT xbp-microsoft-graph-mcp:latest
+install_command: null
+environment:
+  MICROSOFT_MCP_CLIENT_ID: "${MICROSOFT_MCP_CLIENT_ID}"
+services:
+- name: microsoft-graph-mcp
+  target: expressjs
+  branch: main
+  port: 80
+  root_directory: ./
+  environment:
+    MICROSOFT_MCP_CLIENT_ID: "${MICROSOFT_MCP_CLIENT_ID}"
+  url: null
+  healthcheck_path: null
+  restart_policy: on_failure
+  restart_policy_max_failure_count: 10
+  start_wrapper: pm2
+  commands:
+    pre: null
+    install: null
+    build: docker build -t xbp-microsoft-graph-mcp:latest .
+    start: docker run -d --rm --name xbp-microsoft-graph-mcp -p 80:80 -e PORT xbp-microsoft-graph-mcp:latest
+    dev: null
+  force_run_from_root: false
+  version_targets:
+  - pyproject.toml
+  watch_paths: null
+  systemd_service_name: null
+  systemd: null
+  openapi: null
+openapi: null
+workers: null
+systemd_service_name: null
+systemd: null
+kafka_brokers: null
+kafka_topic: null
+kafka_public_url: null
+log_files: null
+monitor_url: null
+monitor_method: null
+monitor_expected_code: null
+monitor_interval: null
+database: null
+target: expressjs
+branch: main
+crate_name: null
+npm_script: null
+port_storybook: null
+url: null
+url_storybook: null
+linear: null
+github: null
+publish: null
+version_targets:
+- pyproject.toml
+version_domains: []
+ignore_paths: []
+watch_ignore_paths: []
+versioning_disabled: []
+release_disabled: []
